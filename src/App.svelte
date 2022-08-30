@@ -4,6 +4,7 @@
   import About from "./About.svelte";
   import Contact from "./Contact.svelte";
   import MobileHub from "./Mobile/MobileHub.svelte";
+  import { config } from "../config";
   import { initializeApp } from "firebase/app";
   import {
     getFirestore,
@@ -12,17 +13,8 @@
     doc,
     getDoc,
   } from "firebase/firestore";
-  const firebaseConfig = {
-    apiKey: "AIzaSyAnZxwBV9T-o-N2S-uCk6hohkC0t2Rn374",
-    authDomain: "mikaylaphotographyportfolio.firebaseapp.com",
-    projectId: "mikaylaphotographyportfolio",
-    storageBucket: "mikaylaphotographyportfolio.appspot.com",
-    messagingSenderId: "674223899189",
-    appId: "1:674223899189:web:363510400b10187606e77c",
-    measurementId: "G-52TG77XHD5",
-  };
 
-  const firebaseApp = initializeApp(firebaseConfig);
+  const firebaseApp = initializeApp(config);
   const db = getFirestore();
   const colRef = collection(db, "All Photos");
   const catRef = collection(db, "Categories");
